@@ -27,5 +27,6 @@ app:
   cors:
     allowed-origins: http://localhost:5173,http://localhost:3000
 
+
   gemini:
-git status    model: gemini-3.8-flash
+    model: gemini-3.8-flash
