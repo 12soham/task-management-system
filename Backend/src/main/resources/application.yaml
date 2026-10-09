@@ -1,9 +1,10 @@
+
 spring:
   application:
     name: taskmanager
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/taskmanager
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/taskmanager}
     username: postgres
     password: root123
     driver-class-name: org.postgresql.Driver
@@ -17,16 +18,16 @@ spring:
         format_sql: true
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 app:
   jwt:
-    secret: your-very-long-secret-key-at-least-32-characters
+    secret: HT8LMfQr1f0QR0iB6CcYqqlZOTYAq8TuZvcniO7+XPE=
     expiration-ms: 86400000
 
   cors:
-    allowed-origins: http://localhost:5173,http://localhost:3000
-
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
 
   gemini:
-    model: gemini-3.8-flash
+    api-key:   ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-3.8-flash}
