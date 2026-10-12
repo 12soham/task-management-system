@@ -2,6 +2,7 @@ package taskmanager.demo.ai.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class AiBreakdownResponse {
 
     private List<AiBreakdownItem> subtasks = new ArrayList<>();

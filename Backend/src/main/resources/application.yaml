@@ -5,8 +5,8 @@ spring:
 
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/taskmanager}
-    username: postgres
-    password: root123
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root123}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -22,12 +22,12 @@ server:
 
 app:
   jwt:
-    secret: HT8LMfQr1f0QR0iB6CcYqqlZOTYAq8TuZvcniO7+XPE=
+    secret: ${JWT_SECRET:replace-with-a-local-development-secret-of-at-least-32-characters}
     expiration-ms: 86400000
 
   cors:
     allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
 
   gemini:
-    api-key:   ${GEMINI_API_KEY:}
+    api-key: ${GEMINI_API_KEY:}
     model: ${GEMINI_MODEL:gemini-3.8-flash}
