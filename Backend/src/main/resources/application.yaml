@@ -1,33 +1,33 @@
 
-spring:
-  application:
-    name: taskmanager
+  spring:
+    application:
+      name: taskmanager
 
-  datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/taskmanager}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:root123}
-    driver-class-name: org.postgresql.Driver
+    datasource:
+      url: ${DB_URL:jdbc:postgresql://localhost:5432/taskmanager}
+      username: ${DB_USERNAME:postgres}
+      password: ${DB_PASSWORD:root123}
+      driver-class-name: org.postgresql.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
+    jpa:
       hibernate:
-        format_sql: true
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
 
-server:
-  port: ${PORT:8080}
+  server:
+    port: ${PORT:8080}
 
-app:
-  jwt:
-    secret: ${JWT_SECRET:replace-with-a-local-development-secret-of-at-least-32-characters}
-    expiration-ms: 86400000
+  app:
+    jwt:
+      secret: ${JWT_SECRET:replace-with-a-local-development-secret-of-at-least-32-characters}
+      expiration-ms: 86400000
 
-  cors:
-    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+    cors:
+      allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
 
-  gemini:
-    api-key: ${GEMINI_API_KEY:}
-    model: ${GEMINI_MODEL:gemini-3.8-flash}
+    gemini:
+      api-key: ${GEMINI_API_KEY:}
+      model: ${GEMINI_MODEL:gemini-3.8-flash}
